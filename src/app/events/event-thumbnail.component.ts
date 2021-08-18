@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { ToastrService } from "../common/toastr.service";
 
 @Component({
     selector: 'event-thumbnail',
@@ -13,6 +14,10 @@ import { Component, Input } from "@angular/core";
 export class EventThumbnail {
     @Input() event:any;
 
+    constructor(private toastr:ToastrService){
+
+    }
+
     timeClass(){
         switch (this.event.time) {
             case '8:00 am' : 
@@ -23,5 +28,9 @@ export class EventThumbnail {
                 return ['normal']
         }
     }
+
+    nameClick(eventName:any){
+        this.toastr.success(eventName)
+      }
 
 }
