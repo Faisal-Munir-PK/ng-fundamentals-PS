@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #31475B;
+    padding-top: 2rem;
+}
+.h-c-w{
+    color: white;
+    font-family: arial;
+}
+hr{
+    background-color: #596D7F;
+}
