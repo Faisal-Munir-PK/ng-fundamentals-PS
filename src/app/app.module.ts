@@ -31,8 +31,15 @@ import { EventRouteActivator } from './events/event-router-activator.component';
   providers:[
     EventService,
     ToastrService,
-    EventRouteActivator
+    EventRouteActivator,
+    { provide: 'canDeactivateCreateEvent', useValue: checkState }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function checkState(component:CreateEvent){
+  if(component.state)
+    return window.confirm('You have not saved your data, are you sure to leave the page?');
+  return true;
+}

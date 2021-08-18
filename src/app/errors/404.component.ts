@@ -9,6 +9,7 @@ import { Component } from '@angular/core'
       margin-top:150px; 
       font-size: 170px;
       text-align: center; 
+      color:white;
     }`]
 })
 export class Error404Component{

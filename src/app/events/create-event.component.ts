@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateEvent{
 
+    state:boolean = true;
 
     constructor(private route: Router){ }
 
