@@ -5,10 +5,11 @@ import { ToastrService } from "../common/toastr.service";
     selector: 'event-thumbnail',
     templateUrl: './event-thumbnail.component.html',
     styles: [`
-        .thumbnail  { min-height: 210px; },
-        .early      { color: green }
-        .late       { color: orange },
-        .normal     { color: black }
+        .thumbnail { min-height: 210px; },
+        .early { color: green }
+        .late { color: orange },
+        .normal { color: black },
+        #event-title { text-decoration:none; color: #31475B, text-shadow: 1px 1px 0px #ff0000; }
     `]
 })
 export class EventThumbnail {

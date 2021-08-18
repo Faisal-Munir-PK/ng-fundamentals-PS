@@ -1,5 +1,7 @@
 <div class="well hoverwell thumbnail">
-  <a (click)="nameClick(event.name)"><h2>{{ event.name }}</h2></a>
+  <a id="event-title" [routerLink]="['/events', event.id]">
+    <h2 >{{ event.name }}</h2>
+  </a>
   <div>
     <div>Date: {{ event?.date }}</div>
     <div  [ngSwitch]="event?.time">Time: {{ event?.time }}
