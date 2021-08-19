@@ -1,3 +1,6 @@
 #searchForm {
   margin-right: 15rem;
 }
+li > a.active {
+  color: #f97924;
+}
