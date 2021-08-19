@@ -10,14 +10,19 @@
           <a
             [routerLink]="['events']"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}">
-            All Events</a>
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            All Events</a
+          >
         </li>
-        <li><a 
-            [routerLink]="['events/new']" 
+        <li>
+          <a
+            [routerLink]="['events/new']"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}">
-            Create Event</a>
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Create Event</a
+          >
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
