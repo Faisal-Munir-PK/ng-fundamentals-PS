@@ -39,7 +39,12 @@
       <div class="navbar-header navbar-right">
         <ul class="nav navbar-nav">
           <li>
-            <a>Welcome John</a>
+            <a
+              [routerLink]="['user/profile']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Welcome John</a
+            >
           </li>
         </ul>
       </div>

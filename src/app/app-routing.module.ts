@@ -6,6 +6,8 @@ import { EventDetails } from './events/event-details.component';
 import { EventListResolver } from './events/event-list-resolver.service';
 import { EventList } from './events/event-list.component';
 import { EventRouteActivator } from './events/event-router-activator.component';
+import { UserModule } from './user/user.module';
+
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
   {
@@ -24,6 +26,10 @@ const routes: Routes = [
     canActivate: [EventRouteActivator],
   },
   { path: '404', component: Error404Component },
+  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule',
+  },
 ];
 
 @NgModule({
