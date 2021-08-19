@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from '../app/errors/404.component';
-import { CreateEvent } from './events/create-event.component';
-import { EventDetails } from './events/event-details.component';
-import { EventListResolver } from './events/event-list-resolver.service';
-import { EventList } from './events/event-list.component';
-import { EventRouteActivator } from './events/event-router-activator.component';
-import { UserModule } from './user/user.module';
+import {
+  CreateEvent,
+  EventDetails,
+  EventListResolver,
+  EventList,
+  EventRouteActivator,
+} from './events/index';
 
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
