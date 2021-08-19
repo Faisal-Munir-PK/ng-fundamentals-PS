@@ -3,18 +3,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from '../app/errors/404.component';
 import { CreateEvent } from './events/create-event.component';
 import { EventDetails } from './events/event-details.component';
+import { EventListResolver } from './events/event-list-resolver.service';
 import { EventList } from './events/event-list.component';
 import { EventRouteActivator } from './events/event-router-activator.component';
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
-  { path: 'events', component: EventList },
-  { path: 'events/new', component: CreateEvent, canDeactivate: ['canDeactivateCreateEvent'] },
-  { path: 'events/:id', component: EventDetails, canActivate: [EventRouteActivator] },
+  {
+    path: 'events',
+    component: EventList,
+    resolve: { events: EventListResolver },
+  },
+  {
+    path: 'events/new',
+    component: CreateEvent,
+    canDeactivate: ['canDeactivateCreateEvent'],
+  },
+  {
+    path: 'events/:id',
+    component: EventDetails,
+    canActivate: [EventRouteActivator],
+  },
   { path: '404', component: Error404Component },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

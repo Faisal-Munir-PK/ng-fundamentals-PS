@@ -1,20 +1,23 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: "create-event",
-    templateUrl: './create-event.component.html',
-    styles: [`
-        .btn.btn-success { margin-right: 5px; }
-    `]
+  selector: 'create-event',
+  templateUrl: './create-event.component.html',
+  styles: [
+    `
+      .btn.btn-success {
+        margin-right: 5px;
+      }
+    `,
+  ],
 })
-export class CreateEvent{
+export class CreateEvent {
+  state: boolean = true;
 
-    state:boolean = true;
+  constructor(private route: Router) {}
 
-    constructor(private route: Router){ }
-
-    cancle(){
-        this.route.navigate(['/events']);
-    }
+  cancle() {
+    this.route.navigate(['/events']);
+  }
 }

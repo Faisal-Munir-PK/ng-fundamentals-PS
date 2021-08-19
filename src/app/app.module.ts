@@ -12,6 +12,7 @@ import { EventDetails } from '../app/events/event-details.component';
 import { CreateEvent } from './events/create-event.component';
 import { Error404Component } from '../app/errors/404.component';
 import { EventRouteActivator } from './events/event-router-activator.component';
+import { EventListResolver } from './events/event-list-resolver.service';
 
 @NgModule({
   declarations: [
@@ -21,25 +22,24 @@ import { EventRouteActivator } from './events/event-router-activator.component';
     NavBar,
     EventDetails,
     CreateEvent,
-    Error404Component
-
+    Error404Component,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers:[
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [
     EventService,
     ToastrService,
     EventRouteActivator,
-    { provide: 'canDeactivateCreateEvent', useValue: checkState }
+    EventListResolver,
+    { provide: 'canDeactivateCreateEvent', useValue: checkState },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 
-export function checkState(component:CreateEvent){
-  if(component.state)
-    return window.confirm('You have not saved your data, are you sure to leave the page?');
+export function checkState(component: CreateEvent) {
+  if (component.state)
+    return window.confirm(
+      'You have not saved your data, are you sure to leave the page?'
+    );
   return true;
 }
