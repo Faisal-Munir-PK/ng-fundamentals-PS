@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
     button { margin-right: 5px; }
   `]
 })
-export class ProfileComponent {}
+export class ProfileComponent {
+  
+}
