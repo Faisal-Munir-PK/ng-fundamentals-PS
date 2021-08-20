@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ToastrService } from '../common/toastr.service';
-``
+``;
 
 @Component({
   selector: 'event-thumbnail',
@@ -17,9 +17,8 @@ import { ToastrService } from '../common/toastr.service';
 })
 export class EventThumbnail {
   @Input() event: any;
-  
 
-  constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService) {}
 
   timeClass() {
     switch (this.event.time) {

@@ -15,6 +15,7 @@ import {
   EventRouteActivator,
 } from './events/index';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './user/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     ToastrService,
     EventRouteActivator,
     EventListResolver,
+    AuthService,
     { provide: 'canDeactivateCreateEvent', useValue: checkState },
   ],
   bootstrap: [AppComponent],
