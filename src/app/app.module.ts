@@ -14,6 +14,7 @@ import {
   EventService,
   EventRouteActivator,
 } from './events/index';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {
     CreateEvent,
     Error404Component,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     EventService,
     ToastrService,

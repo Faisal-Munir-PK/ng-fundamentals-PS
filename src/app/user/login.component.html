@@ -1,11 +1,15 @@
-<h1>Login</h1>
+<h1 class="heading">Login</h1>
 <hr />
-<div class="col-md-4">
-  <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+<div class="well col-md-4">
+  <form
+    autocomplete="off"
+    #loginForm="ngForm"
+    (submit)="login(loginForm.value)"
+  >
     <div class="form-group">
       <label for="userName">User Name:</label>
       <input
-        (ngModel)="userName"
+        (ngModel)="(userName)"
         name="userName"
         id="userName"
         type="text"
@@ -16,7 +20,7 @@
     <div class="form-group">
       <label for="password">Password:</label>
       <input
-        (ngModel)="password"
+        (ngModel)="(password)"
         name="password"
         id="password"
         type="password"
